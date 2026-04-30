@@ -15,7 +15,7 @@ MODEL_FILES = {
     "random_forest":      "random_forest.pkl",
     "naive_bayes":        "naive_bayes.pkl",
     "logistic_regression":"logistic_regression.pkl",
-    "svm":                "svm.pkl",
+    "decision_tree":      "decision_tree.pkl",
 }
 
 for name, filename in MODEL_FILES.items():

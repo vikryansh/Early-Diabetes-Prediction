@@ -18,7 +18,7 @@ A FastAPI-based REST API that predicts early-stage diabetes from symptom and lif
 | Random Forest | `random_forest` |
 | Naive Bayes | `naive_bayes` |
 | Logistic Regression | `logistic_regression` |
-| SVM | `svm` |
+| Decision Tree | `decision_tree` |
 
 ## Endpoints
 
@@ -31,7 +31,7 @@ Run a prediction.
 **Request body (JSON):**
 ```json
 {
-  "model_choice": "random_forest",
+  "model_choice": "decision_tree",
   "age": 45,
   "gender": "Male",
   "polyuria": 1,
@@ -54,7 +54,7 @@ Run a prediction.
 **Response:**
 ```json
 {
-  "model_used": "random_forest",
+  "model_used": "decision_tree",
   "prediction": 1,
   "result": "Diabetes"
 }
