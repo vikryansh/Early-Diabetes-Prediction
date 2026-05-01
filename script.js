@@ -348,15 +348,14 @@ function buildQuestionCard(q) {
     const opts = document.createElement("div");
     opts.className = "q-options";
 
-    [{ label: "Male", female: 0, male: 1 }, { label: "Female", female: 1, male: 0 }].forEach(opt => {
+    ["Male", "Female"].forEach(label => {
       const btn = document.createElement("button");
       btn.className = "q-option";
-      btn.textContent = opt.label;
+      btn.textContent = label;
       btn.addEventListener("click", () => {
         opts.querySelectorAll(".q-option").forEach(b => b.className = "q-option");
         btn.classList.add("selected-yes");
-        state.answers["gender_Female"] = opt.female;
-        state.answers["gender_Male"] = opt.male;
+        state.answers["gender"] = label;
       });
       opts.appendChild(btn);
     });
@@ -385,7 +384,7 @@ function validateChunk(chunkIdx) {
       }
     }
     if (q.type === "gender") {
-      if (state.answers["gender_Female"] === undefined) {
+      if (state.answers["gender"] === undefined) {
         errorEl.textContent = "Please select a biological sex.";
         return false;
       }
