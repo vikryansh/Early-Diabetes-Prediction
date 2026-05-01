@@ -397,9 +397,10 @@ body {
 }
 
 .q-option.selected-no {
-  background: var(--bg-card2);
-  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  border-color: var(--text-muted);
   color: var(--text);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--text) 8%, transparent);
 }
 
 /* Age & Gender special cards */
